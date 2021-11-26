@@ -1,0 +1,19 @@
+<h1>Lightbox Gallery</h1>
+<div class='gallery'>
+
+</div>
+<!-- Javascript image popup -->
+<script src="assets/js/simple-lightbox.js"></script>
+<script src="assets/js/gallery.js"></script>
+<script>
+  var localEvents = "https://localhost/internal_files/";
+  loadFileNames(localEvents + 'example/')
+  .then((data) => {
+    $(".gallery").append(data);
+    loadLightbox();
+  })
+  .catch((error) => {
+    //alert(error);
+    console.error(error);
+  });
+</script>

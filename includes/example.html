@@ -1,0 +1,25 @@
+<article>
+	<h2>Example Page</h2>
+	<span class="save">(**Save all forms to your local PC [My Documents] before modifying**)</span>
+</article>
+<table class="jsTable">
+	<thead>
+		<th>File Type</th>
+		<th>File Name</th>
+		<th>Last Modified</th>
+	</thead>
+</table>
+<script src="assets/js/script.js"></script>
+<script>
+  var localFiles = "https://localhost/internal_files/";
+  loadDirFiles(localFiles + 'example/')
+  .then((data) => {
+    console.log(data);
+    $(".jsTable").append(data);
+		chkViewPort();
+  })
+  .catch((error) => {
+    alert(error);
+    console.error(error);
+  });
+</script>
